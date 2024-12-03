@@ -15,9 +15,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button frameBtn;
-    private Button tweenBtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,14 +26,14 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        frameBtn = findViewById(R.id.button);
-        tweenBtn = findViewById(R.id.button2);
+        Button frameBtn = findViewById(R.id.button);
+        Button tweenBtn = findViewById(R.id.button2);
 
         Animation fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-        Animation expantionANIM = AnimationUtils.loadAnimation(this, R.anim.expantion);
+        Animation zoomANIM = AnimationUtils.loadAnimation(this, R.anim.zoom);
 
         frameBtn.startAnimation(fadeIn);
-        tweenBtn.startAnimation(expantionANIM);
+        tweenBtn.startAnimation(zoomANIM);
     }
 
     public void framePage(View v)
@@ -50,6 +47,6 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent intent = new Intent (this, TweenActivity.class);
         startActivity(intent);
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        overridePendingTransition(R.anim.rotate_in, R.anim.rotate_out);
     }
 }

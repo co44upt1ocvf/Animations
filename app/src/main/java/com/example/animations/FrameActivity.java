@@ -12,9 +12,6 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FrameActivity extends AppCompatActivity {
-    private ImageView cats;
-    private Button startBtn;
-    private Button backBtn;
     private AnimationDrawable frameAnimation;
 
     @Override
@@ -22,9 +19,9 @@ public class FrameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_frame);
 
-        cats = findViewById(R.id.imageView);
-        startBtn = findViewById(R.id.button3);
-        backBtn = findViewById(R.id.button4);
+        ImageView cats = findViewById(R.id.imageView);
+        Button startBtn = findViewById(R.id.button3);
+        Button backBtn = findViewById(R.id.button4);
 
         frameAnimation = (AnimationDrawable)cats.getDrawable();
 
@@ -45,6 +42,6 @@ public class FrameActivity extends AppCompatActivity {
     {
         Intent intent = new Intent (this, MainActivity.class);
         startActivity(intent);
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        overridePendingTransition(R.anim.zoom_in, R.anim.zoom_out);
     }
 }
